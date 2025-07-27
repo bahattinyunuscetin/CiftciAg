@@ -1,4 +1,4 @@
-# Smart Agriculture Management System (SAMS)
+# ÇiftciAg 🌾 – Akıllı Tarım Yönetim Sistemi
 
 <div align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
@@ -14,128 +14,126 @@
   <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white" alt="JWT" />
 </div>
 
-## 🌱 Overview
+---
 
-SAMS is an end-to-end farm management system that is aimed at transforming farming through intelligent technology. It brings together real-time weather data, crop alerts, irrigation management, and disease identification to help farmers make decisions and enhance their farm business.
+## 🌱 Genel Bakış
 
-## ✨ Key Features
+**ÇiftciAg**, çiftçiliği dijitalleştirmek ve verimliliği artırmak amacıyla geliştirilmiş uçtan uca bir akıllı tarım yönetim sistemidir. Gerçek zamanlı hava durumu verisi, ürün hastalık uyarıları, sulama takibi ve daha fazlasıyla tarımsal karar süreçlerini destekler.
 
-### 🌾 Agricultural Management
-- **Smart Irrigation**
-  - Automated scheduling based on weather data
-  - Water usage optimization
-  - Regional weather integration
-  
+---
 
-- **Crop Management**
-  - Crop recommendation 
-  - Disease detection
-  - Pest management
+## ✨ Temel Özellikler
 
-- **Weather Integration**
-  - Real-time weather updates
-  - Weather forecasting
-  - Climate analysis
-  - Weather alerts
+### 🌾 Tarımsal Yönetim
+- **Akıllı Sulama**
+  - Hava durumu verisine dayalı otomatik planlama  
+  - Su tüketiminin optimize edilmesi  
+  - Bölgesel hava tahmin entegrasyonu  
 
-### 👥 User Features
-- **Role-based Access**
-  - Farmer dashboard
-  - Agricultural expert portal
-  - Administrator controls
-  - Custom permissions
+- **Ürün Takibi ve Hastalık Yönetimi**
+  - Ürün öneri sistemi  
+  - Hastalık ve zararlı tespiti  
+  - Erken uyarı bildirimleri  
 
-- **Knowledge Base**
-  - Agricultural best practices
-  - Expert articles
-  - Interactive guides
-    
+- **Hava Durumu Entegrasyonu**
+  - Anlık hava durumu verileri  
+  - 5-7 günlük tahminler  
+  - İklim analizi ve uyarılar  
 
-## 🚀 Getting Started
+### 👥 Kullanıcı Özellikleri
+- **Rol Tabanlı Erişim**
+  - Çiftçi paneli  
+  - Ziraat mühendisi ve uzman portalı  
+  - Yönetici kontrolleri ve özel izinler  
 
-### Prerequisites
-- Node.js (v14 or higher)
-- MongoDB (v4.4 or higher)
-- npm or yarn
+- **Bilgi Tabanı**
+  - Tarımda en iyi uygulamalar  
+  - Uzman makaleleri  
+  - Etkileşimli rehberler  
 
-### Installation
+---
 
-1. Clone the repository:
+## 🚀 Başlarken
+
+### Gereksinimler
+- Node.js (v14+)
+- MongoDB (v4.4+)
+- npm veya yarn
+- Git
+
+### Kurulum Adımları
+
+1. Repoyu klonlayın:
 ```bash
-git clone https://github.com/your-username/sams.git
-cd sams
-```
+git clone https://github.com/bahattinyunuscetin/CiftciAg.git
+cd CiftciAg
+Frontend ve backend bağımlılıklarını yükleyin:
 
-2. Install dependencies for both frontend and backend:
-```bash
-# Install frontend dependencies
+bash
+Kopyala
+Düzenle
+# Frontend
 cd frontend
 npm install
 
-# Install backend dependencies
+# Backend
 cd ../backend
 npm install
-```
+Ortam değişkenlerini ayarlayın:
 
-3. Configure environment variables:
-```bash
+bash
+Kopyala
+Düzenle
 # Frontend
 cp frontend/.env.example frontend/.env
 
 # Backend
 cp backend/.env.example backend/.env
-```
+Sunucuları başlatın:
 
-4. Start the development servers:
-```bash
-# Start backend server
+bash
+Kopyala
+Düzenle
+# Backend
 cd backend
 npm run dev
 
-# Start frontend server (in a new terminal)
+# Yeni terminalde frontend
 cd frontend
 npm start
-```
+Uygulama:
 
-The application will be available at:
-- Frontend: `http://localhost:3000`
-- Backend API: `http://localhost:5000`
+Frontend: http://localhost:3000
 
+API: http://localhost:5000
 
-## 🧪 Testing
-
-```bash
-# Frontend tests
+🧪 Test Süreci
+bash
+Kopyala
+Düzenle
+# Frontend testleri
 cd frontend
 npm test
 
-# Backend tests
+# Backend testleri
 cd backend
 npm test
-```
+🔒 Güvenlik
+JWT tabanlı kimlik doğrulama
 
-## 🔒 Security
+Rol tabanlı erişim denetimi
 
-- JWT-based authentication
-- Role-based access control
-- Input validation and sanitization
-- CORS protection
-- Rate limiting
-- Secure password hashing
+Giriş doğrulama ve XSS koruması
 
+CORS politikası
 
-## 📝 License
+Rate Limiting
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Şifre hashleme (bcrypt, scrypt, vs.)
 
+📝 Lisans
+Bu proje MIT lisansı ile lisanslanmıştır – detaylar için LICENSE dosyasına bakınız.
 
+⚠️ Bu proje eğitim amaçlı geliştirilmiştir. Yetkisiz ticari kullanım yasaktır.
 
----
-
-This project is developed for educational purposes only. Unauthorized commercial use is not permitted.
-___
-🚀 Developed for Academic Submission
-
-<div align="center">
-  <p>© 2024 Smart Agriculture Management System</p>
-</div> 
+<div align="center"> <p>© 2024 ÇiftciAg – Türkiye’nin Tarımsal Dijitalleşme Projesi</p> </div> ```
