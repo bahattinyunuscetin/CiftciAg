@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+  <!-- Simple representation of Department of Agriculture Sri Lanka logo -->
+  <rect x="20" y="20" width="160" height="60" rx="10" fill="#fff"/>
+  <circle cx="60" cy="50" r="25" fill="#fff"/>
+  <path d="M55 35 C55 35, 45 45, 50 65 C55 55, 65 55, 70 65 C75 55, 65 45, 55 35" fill="#fff"/>
+  <path d="M85 35 L115 35 L115 65 L85 65 Z" stroke="#fff" fill="none" stroke-width="3"/>
+  <path d="M125 35 L155 35 L140 50 L155 65 L125 65 Z" stroke="#fff" fill="none" stroke-width="3"/>
+  <text x="40" y="90" font-family="Arial" font-size="12" fill="#fff">Department of Agriculture</text>
+</svg> 

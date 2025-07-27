@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+  <!-- Simple representation of FAO logo -->
+  <circle cx="100" cy="50" r="40" stroke="#fff" fill="none" stroke-width="3"/>
+  <path d="M70 50 L130 50" stroke="#fff" stroke-width="3"/>
+  <path d="M100 20 L100 80" stroke="#fff" stroke-width="3"/>
+  <path d="M85 35 C85 35, 100 30, 115 35" stroke="#fff" fill="none" stroke-width="3"/>
+  <path d="M85 65 C85 65, 100 70, 115 65" stroke="#fff" fill="none" stroke-width="3"/>
+  <text x="70" y="95" font-family="Arial" font-size="14" fill="#fff" font-weight="bold">FAO</text>
+</svg> 

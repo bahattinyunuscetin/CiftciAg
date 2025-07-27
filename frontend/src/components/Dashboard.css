@@ -1,0 +1,286 @@
+.dashboard {
+    padding: 2rem;
+    max-width: 100%;
+    width: 85%;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.dashboard-header h1 {
+    color: #2e7d32; /* Changed to green for agriculture theme */
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-date {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    flex: 1;
+}
+
+.dashboard-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card h2 {
+    color: #2e7d32; /* Green header */
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+
+/* Loading State */
+.dashboard-loading {
+    text-align: center;
+    padding: 2rem;
+    color: #2c3e50;
+    font-size: 1.25rem;
+}
+
+/* Error State */
+.dashboard-error {
+    background-color: #fff5f5;
+    border: 1px solid #feb2b2;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.dashboard-error p {
+    color: #c53030;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.retry-button {
+    background-color: #e53e3e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.retry-button:hover {
+    background-color: #c53030;
+}
+
+/* Quick Actions Styles */
+.quick-actions-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.quick-actions button {
+    padding: 1rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+    text-align: center;
+}
+
+.quick-actions button:hover {
+    background-color: #388e3c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* User Guide button specific styling */
+.quick-actions button:nth-child(6) {
+    background-color: #4caf50;
+}
+
+.quick-actions button:nth-child(6):hover {
+    background-color: #388e3c;
+}
+
+/* About Section Styles */
+.about-card {
+    grid-column: span 2;
+}
+
+.about-content {
+    line-height: 1.7;
+    color: #555;
+}
+
+.about-content h3 {
+    color: #2e7d32;
+    margin: 1.5rem 0 0.8rem 0;
+    font-size: 1.1rem;
+}
+
+.offer-list {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    list-style-type: none;
+}
+
+.offer-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.offer-list li::before {
+    content: "✓";
+    color: #4caf50;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Guest user banner */
+.guest-banner {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 10px 0 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.guest-banner p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #495057;
+}
+
+.guest-banner a {
+    color: #1976d2;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.guest-banner a:hover {
+    text-decoration: underline;
+}
+
+/* Limited access indicators for guest users */
+.login-required {
+    display: block;
+    font-size: 0.75rem;
+    color: #dc3545;
+    margin-top: 5px;
+}
+
+.guest-access {
+    display: block;
+    font-size: 0.75rem;
+    color: #28a745;
+    margin-top: 5px;
+}
+
+/* Restricted features for guest users */
+button.restricted {
+    opacity: 0.7;
+    position: relative;
+}
+
+button.restricted::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: inherit;
+}
+
+/* Registration CTA */
+.registration-cta {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #e8f5e9;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.registration-cta h3 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.registration-cta p {
+    margin-bottom: 15px;
+}
+
+.register-button {
+    padding: 10px 20px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.register-button:hover {
+    background-color: #1b5e20;
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 1rem;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card {
+        grid-column: span 1;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .dashboard-card {
+        padding: 1rem;
+    }
+}

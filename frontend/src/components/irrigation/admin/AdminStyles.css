@@ -1,0 +1,1008 @@
+/* Admin Dashboard Styles */
+
+:root {
+    --color-primary: #1976d2;
+    --color-primary-light: #64b5f6;
+    --color-primary-dark: #0d47a1;
+    
+    --color-secondary: #f4f6f8;
+    
+    --color-success: #4caf50;
+    --color-success-light: #a5d6a7;
+    
+    --color-warning: #ff9800;
+    --color-warning-light: #ffe0b2;
+    
+    --color-danger: #f44336;
+    --color-danger-light: #ffcdd2;
+    
+    --color-text-primary: #263238;
+    --color-text-secondary: #546e7a;
+    
+    --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    --hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    
+    --border-radius: 10px;
+    --transition-speed: 0.3s;
+}
+
+.admin-dashboard {
+    margin: 20px auto;
+}
+
+.admin-loading {
+    text-align: center;
+    padding: 30px;
+    font-size: 18px;
+    color: #666;
+}
+
+.admin-loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: var(--color-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.admin-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(25, 118, 210, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid var(--color-primary);
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.admin-error {
+    background-color: var(--color-danger-light);
+    color: var(--color-danger);
+    padding: 12px;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    border-left: 4px solid var(--color-danger);
+}
+
+.admin-success {
+    background-color: var(--color-success-light);
+    color: var(--color-success);
+    padding: 12px;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    border-left: 4px solid var(--color-success);
+}
+
+/* Admin Panel Header */
+.admin-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.admin-panel-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--color-text-primary);
+}
+
+.admin-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.auto-refresh-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.auto-refresh-control label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.refresh-interval-select {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.refresh-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.refresh-button:hover:not(:disabled) {
+    background-color: var(--color-primary-dark);
+}
+
+.refresh-button:disabled {
+    background-color: #b0bec5;
+    cursor: not-allowed;
+}
+
+.last-updated-info {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.real-time-badge {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 3px 8px;
+    background-color: var(--color-success-light);
+    color: var(--color-success);
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}
+
+/* Admin Grid Layout */
+.admin-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.admin-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    padding: 20px;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.admin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.admin-card h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--color-text-primary);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-card h4 svg {
+    color: var(--color-primary);
+}
+
+/* System Health Card */
+.system-health-card {
+    flex: 1;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.status-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.status-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.status-label svg {
+    color: var(--color-primary);
+    font-size: 1rem;
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.status-operational {
+    background-color: var(--color-success-light);
+    color: var(--color-success);
+}
+
+.status-degraded {
+    background-color: var(--color-warning-light);
+    color: var(--color-warning);
+}
+
+.system-uptime {
+    padding-top: 15px;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+/* System Resources Card */
+.system-resource-card {
+    flex: 1;
+}
+
+.resource-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.resource-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.resource-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.resource-value {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+}
+
+.usage-bar-container {
+    height: 10px;
+    background-color: #eceff1;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.usage-bar {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.usage-bar-normal {
+    background-color: var(--color-success);
+}
+
+.usage-bar-warning {
+    background-color: var(--color-warning);
+}
+
+.usage-bar-critical {
+    background-color: var(--color-danger);
+}
+
+/* System Statistics Card */
+.system-statistics-card {
+    width: 100%;
+}
+
+.statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.statistic-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-secondary);
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.statistic-card:hover {
+    transform: translateY(-5px);
+}
+
+.statistic-icon {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.statistic-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 5px;
+}
+
+.statistic-label {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    text-align: center;
+}
+
+/* System Actions */
+.system-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.admin-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.admin-action-btn:hover:not(:disabled) {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+.admin-action-btn:disabled {
+    background-color: #b0bec5;
+    cursor: not-allowed;
+}
+
+.admin-action-btn.warning {
+    background-color: var(--color-warning);
+}
+
+.admin-action-btn.warning:hover:not(:disabled) {
+    background-color: #f57c00;
+}
+
+.admin-action-btn svg {
+    font-size: 1rem;
+}
+
+/* Tab button styles */
+.tab-button.user-view {
+    background-color: var(--color-success-light);
+    color: var(--color-success);
+    border: 1px solid var(--color-success-light);
+}
+
+.tab-button.user-view:hover {
+    background-color: var(--color-success);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .admin-row {
+        flex-direction: column;
+    }
+    
+    .statistics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .admin-panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .admin-header-actions {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* AI Configuration Tab Styles */
+.admin-config-tab {
+    padding: 20px;
+}
+
+.config-section {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.config-section h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--color-text-primary);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.config-form {
+    margin-top: 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 16px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-text {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-top: 5px;
+}
+
+.save-config-btn {
+    padding: 10px 20px;
+    background-color: var(--color-success);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.save-config-btn:hover {
+    background-color: #388e3c;
+}
+
+/* System Status Tab Styles */
+.admin-status-tab {
+    padding: 20px;
+}
+
+.status-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.status-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.status-card h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.status-indicators {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.status-value {
+    font-weight: 600;
+}
+
+.status-value.healthy {
+    color: #2e7d32;
+}
+
+.status-value.unhealthy {
+    color: #cc0000;
+}
+
+.system-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.admin-small-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #1976d2;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.admin-small-btn:hover {
+    background-color: #1565c0;
+}
+
+.admin-small-btn.danger {
+    background-color: #f44336;
+}
+
+.admin-small-btn.danger:hover {
+    background-color: #d32f2f;
+}
+
+/* Reports and Analysis Tab Styles */
+.admin-reports-tab {
+    padding: 20px;
+}
+
+.report-filters {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.generate-report-btn {
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    align-self: flex-end;
+}
+
+.generate-report-btn:hover {
+    background-color: #1565c0;
+}
+
+.report-display {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.report-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    flex: 1;
+    min-width: 150px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+}
+
+.summary-card h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.summary-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.summary-trend {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.summary-trend.positive {
+    color: #2e7d32;
+}
+
+.summary-trend.negative {
+    color: #c62828;
+}
+
+.report-chart {
+    margin-bottom: 30px;
+}
+
+.report-chart h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.chart-placeholder {
+    height: 300px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.bar-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.chart-bar {
+    width: 40px;
+    background-color: #2196f3;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.chart-bar span {
+    position: absolute;
+    bottom: -25px;
+    font-size: 14px;
+    color: #555;
+}
+
+.crop-distribution {
+    margin-bottom: 30px;
+}
+
+.crop-distribution h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.distribution-data {
+    margin-top: 20px;
+}
+
+.dist-item {
+    margin-bottom: 15px;
+}
+
+.dist-label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.dist-bar {
+    height: 25px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    position: relative;
+}
+
+.dist-fill {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 5px 0 0 5px;
+}
+
+.dist-value {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 600;
+    color: #333;
+}
+
+.report-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.report-action-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.report-action-btn:hover {
+    background-color: #1565c0;
+}
+
+/* Access Logs Tab Styles */
+.admin-logs-tab {
+    padding: 20px;
+}
+
+.log-filters {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.filter-logs-btn {
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    align-self: flex-end;
+}
+
+.filter-logs-btn:hover {
+    background-color: #1565c0;
+}
+
+.logs-table-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.logs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.logs-table th,
+.logs-table td {
+    border: 1px solid #eee;
+    padding: 12px;
+    text-align: left;
+}
+
+.logs-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+.log-status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.log-status.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.log-status.error {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.logs-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.pagination-btn {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: #f5f5f5;
+}
+
+.pagination-btn:disabled {
+    background-color: #f5f5f5;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Styles for reset logs functionality */
+.reset-logs-container {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mock-data-warning {
+    color: #856404;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.mock-data-warning i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.reset-logs-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.reset-logs-btn:hover:not(:disabled) {
+    background-color: #bd2130;
+}
+
+.reset-logs-btn:disabled {
+    background-color: #dc354580;
+    cursor: not-allowed;
+}
+
+/* Admin logs action buttons */
+.logs-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.clear-all-logs-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.clear-all-logs-btn:hover:not(:disabled) {
+    background-color: #bd2130;
+}
+
+.clear-all-logs-btn:disabled {
+    background-color: #dc354580;
+    cursor: not-allowed;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .status-panel, .form-row, .report-summary {
+        flex-direction: column;
+    }
+    
+    .status-card, .form-group, .summary-card {
+        min-width: 100%;
+    }
+    
+    .nav-tabs-container {
+        flex-wrap: wrap;
+    }
+    
+    .tab-button {
+        flex: 1 0 auto;
+        margin-bottom: 5px;
+    }
+} 
